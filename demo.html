@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Highcharts demo</title>
+        <meta charset='utf-8'>
+    </head>
+    <body>
+     <!-- Load the Highcharts scripts. Please note that the Chatbot loads all scripts
+    because we do not know what is being used in the configuration previews. In
+    production, unused scripts should be removed. --> <script src="https://code.highcharts.com/highcharts.js"></script> <script src="https://code.highcharts.com/highcharts-more.js"></script> <script src="https://code.highcharts.com/highcharts-3d.js"></script> <script src="https://code.highcharts.com/modules/stock.js"></script> <script src="https://code.highcharts.com/maps/modules/map.js"></script> <script src="https://code.highcharts.com/modules/gantt.js"></script> <script src="https://code.highcharts.com/modules/exporting.js"></script> <script src="https://code.highcharts.com/modules/parallel-coordinates.js"></script> <script src="https://code.highcharts.com/modules/accessibility.js"></script> <script src="https://code.highcharts.com/modules/annotations-advanced.js"></script> <script src="https://code.highcharts.com/modules/data.js"></script> <script src="https://code.highcharts.com/modules/draggable-points.js"></script> <script src="https://code.highcharts.com/modules/static-scale.js"></script> <script src="https://code.highcharts.com/modules/broken-axis.js"></script> <script src="https://code.highcharts.com/modules/heatmap.js"></script> <script src="https://code.highcharts.com/modules/tilemap.js"></script> <script src="https://code.highcharts.com/modules/timeline.js"></script> <script src="https://code.highcharts.com/modules/treemap.js"></script> <script src="https://code.highcharts.com/modules/treegraph.js"></script> <script src="https://code.highcharts.com/modules/item-series.js"></script> <script src="https://code.highcharts.com/modules/drilldown.js"></script> <script src="https://code.highcharts.com/modules/histogram-bellcurve.js"></script> <script src="https://code.highcharts.com/modules/bullet.js"></script> <script src="https://code.highcharts.com/modules/funnel.js"></script> <script src="https://code.highcharts.com/modules/funnel3d.js"></script> <script src="https://code.highcharts.com/modules/pyramid3d.js"></script> <script src="https://code.highcharts.com/modules/networkgraph.js"></script> <script src="https://code.highcharts.com/modules/pareto.js"></script> <script src="https://code.highcharts.com/modules/pattern-fill.js"></script> <script src="https://code.highcharts.com/modules/price-indicator.js"></script> <script src="https://code.highcharts.com/modules/sankey.js"></script> <script src="https://code.highcharts.com/modules/arc-diagram.js"></script> <script src="https://code.highcharts.com/modules/dependency-wheel.js"></script> <script src="https://code.highcharts.com/modules/series-label.js"></script> <script src="https://code.highcharts.com/modules/solid-gauge.js"></script> <script src="https://code.highcharts.com/modules/sonification.js"></script> <script src="https://code.highcharts.com/modules/stock-tools.js"></script> <script src="https://code.highcharts.com/modules/streamgraph.js"></script> <script src="https://code.highcharts.com/modules/sunburst.js"></script> <script src="https://code.highcharts.com/modules/variable-pie.js"></script> <script src="https://code.highcharts.com/modules/variwide.js"></script> <script src="https://code.highcharts.com/modules/vector.js"></script> <script src="https://code.highcharts.com/modules/venn.js"></script> <script src="https://code.highcharts.com/modules/windbarb.js"></script> <script src="https://code.highcharts.com/modules/wordcloud.js"></script> <script src="https://code.highcharts.com/modules/xrange.js"></script> <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script> <script src="https://code.highcharts.com/modules/drag-panes.js"></script> <script src="https://code.highcharts.com/modules/debugger.js"></script> <script src="https://code.highcharts.com/modules/dumbbell.js"></script> <script src="https://code.highcharts.com/modules/lollipop.js"></script> <script src="https://code.highcharts.com/modules/cylinder.js"></script> <script src="https://code.highcharts.com/modules/organization.js"></script> <script src="https://code.highcharts.com/modules/dotplot.js"></script> <script src="https://code.highcharts.com/modules/marker-clusters.js"></script> <script src="https://code.highcharts.com/modules/hollowcandlestick.js"></script> <script src="https://code.highcharts.com/modules/heikinashi.js"></script> <div id="container"></div> 
+    </body>
+    <script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Lợi nhuận và Lợi nhuận trước thuế (YoY)'
+    },
+    xAxis: {
+        categories: ['Q4 2019', 'Q1 2020', 'Q2 2020', 'Q3 2020', 'Q4 2020', 'Q1 2021', 'Q2 2021', 'Q3 2021', 'Q4 2021', 'Q1 2022', 'Q2 2022', 'Q3 2022', 'Q4 2022', 'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023', 'Q1 2024', 'Q2 2024', 'Q3 2024'],
+    },
+    yAxis: [{
+        min: -80000,
+        title: {
+            text: 'Lợi nhuận'
+        }
+    }, {
+        title: {
+            text: 'Lợi nhuận trước thuế (YoY)',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        opposite: true,
+    }],
+    tooltip: {
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+            dataLabels: {
+                enabled: true
+            }
+        },
+        line: {
+            dataLabels: {
+                enabled: true,
+                format: '{point.y:.1f}%'
+            }
+        }
+    },
+    series: [{
+        name: 'Lợi nhuận khác',
+        data: [10491, 2829, 5482, 3696, 4515, 14369, -44224, 6664, -31679, 11037, 5887, -424, -64843, 5869, 12070, 869, -34695, 3790, 56256, -75401]
+    }, {
+        name: 'Lãi lô từ công ty LDLK',
+        data: [64639, 59526, 18519, 33785, 48477, 24666, 68051, 67874, 81785, 125503, 101108, 109420, 70433, 21379, 58911, 52232, 139216, 97955, 183290, 221807]
+    }, {
+        name: 'Lợi nhuận tài chính',
+        data: [-26082, -39581, -40189, -37331, -14490, -5873, -35850, -19826, -6938, -28073, -52981, -54069, -18357, -18920, 1809845, -18193, -841, 314827, -15899, -45030]
+    }, {
+        name: 'Lợi nhuận thuần từ HĐKD',
+        data: [43699, 118096, 157384, 145485, 46199, 158860, 208248, 131834, 188114, 241776, 316108, 281570, 264181, 300055, 303331, 362885, 149656, 291391, 296124, 399276]
+    }, {
+        name: 'Lợi nhuận trước thuế (YoY) %',
+        type: 'line',
+        data: [null, null, null, null, -9, 36, 39, 28, 173, 82, 89, 80, 9, -12, 490, 18, 1, 130, -76, 26],
+        yAxis: 1,
+        color: 'red'
+    }]
+});
+</script>
+</html>
